@@ -1,0 +1,89 @@
+
+---
+- name: general stuff to install
+  hosts: all
+  remote_user: sudo
+  become: true
+  tasks:
+  - name: get update
+    apt:
+      upgrade: yes
+      update_cache: yes
+
+  - name: install pip
+    shell: sudo apt-get install python3-pip -y
+  
+  - name: install atomicwrites
+    shell: pip3 install atomicwrites
+
+  - name: install attrs
+    shell: pip3 install attrs
+
+  - name: install beautifulsoup4
+    shell : pip3 install beautifulsoup4
+
+  - name: install certifi
+    shell: pip3 install certifi
+
+  - name: install chardet
+    shell: pip3 install chardet
+
+  - name: install idna
+    shell: pip3 install idna
+
+  - name: install importlib-metadata
+    shell: pip3 install importlib-metadata
+
+  - name: install more-itertools
+    shell: pip3 install more-itertools
+
+  - name: install packaging
+    shell: pip3 install packaging
+
+  - name: install pluggy
+    shell: pip3 install pluggy
+
+  - name: install py
+    shell: pip3 install py
+
+  - name: install pyparsing
+    shell: pip3 install pyparsing
+
+  - name: install pytest
+    shell: pip3 install pytest
+
+  - name: install requests
+    shell: pip3 install requests
+
+  - name: install six
+    shell: pip3 install six
+
+  - name: install soupsieve
+    shell: pip3 install soupsieve
+
+  - name: install urllib3
+    shell: pip3 install urllib3
+
+  - name: install wcwidth
+    shell: pip3 install wcwidth
+
+  - name: install zipp
+    shell: pip3 install zipp
+
+  - name: install bs4
+    shell: pip3 install bs4
+
+  - name: install Pycharm part 1
+    shell: sudo apt install snapd snapd-xdg-open -y
+
+  - name: install pycham
+    shell: sudo snap install pycharm-community --classic
+
+  - name: adding java repo
+    shell: sudo add-apt-repository ppa:webupd8team/java
+
+  - name: update
+    shell: sudo apt update
+
+  - name: installing java 8
+    shell: sudo apt install openjdk-8-jre-headless -y
